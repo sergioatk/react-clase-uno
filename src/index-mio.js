@@ -2,13 +2,28 @@ import { Welcome } from './components/Welcome.js';
 
 import { Tarjeta, BlogPost, autor, textoEnParrafos } from './tarea/Tarea1.js'
 
+import { MatchNombre, PasswordInput } from './tarea/Tarea2.js'
 
+// Tarea2.js , clase 1
 
-ReactDOM.render(<BlogPost
-    titulo="Oda a las ardillas"
-    autor={autor}
-    parrafos={textoEnParrafos}
+ReactDOM.render(<PasswordInput
+    minLength='8'
 />, document.getElementById('react-app'));
+
+// ReactDOM.render(<MatchNombre
+//     nombre="Sergio"
+// />, document.getElementById('react-app'));
+
+
+
+// Tarea uno, clase 1
+
+// ReactDOM.render(<BlogPost
+//     titulo="Oda a las ardillas"
+//     autor={autor}
+//     parrafos={textoEnParrafos}
+// />, document.getElementById('react-app'));
+
 
 //ReactDOM.render(<Welcome nombre="Julián" />, document.getElementById('react-app'));
 
