@@ -46,23 +46,22 @@ export function MatchNombre(props) {
  */
 
 export function PasswordInput(props) {
-
+    const [password, setPassword] = React.useState(false);
+  
     return (
-        <div>
-            hola
-        </div>
-    )
-    // const [nombreValido, setNombreValido] = React.useState(false);
-
-    
-    // return (
-    //     <input 
-    //         onChange={(e) => const nombre = e.target.value === 'sergio' ? setNombreValido(true) : setNombreValido(false)
-    //         }
-    //         className={nombreValido ? 'input-match' : 'input'}
-    //     />
-    // )
-}
+      <input
+        onChange={e => {
+          const password =
+            e.target.value.length >= props.minLength
+              ? setPassword(true)
+              : setPassword(false);
+        }}
+        type="password"
+        className={password ? 'input-match' : 'input'}
+      />
+    );
+  }
+   
 
 /*
  * Estos componentes están bastante buenos, pero estamos repitiendo mucho código,
