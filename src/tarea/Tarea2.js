@@ -19,7 +19,9 @@ export function MatchNombre(props) {
     
     return (
         <input 
-            onChange={(e) => const nombre = e.target.value === 'sergio' ? setNombreValido(true) : setNombreValido(false)
+            onChange={(e) => {
+              const nombre = e.target.value === 'sergio' ? setNombreValido(true) : setNombreValido(false)
+            } 
             }
             className={nombreValido ? 'input-match' : 'input'}
         />
@@ -51,7 +53,6 @@ export function PasswordInput(props) {
     return (
       <input
         onChange={e => {
-          const password =
             e.target.value.length >= props.minLength
               ? setPassword(true)
               : setPassword(false);
@@ -61,7 +62,9 @@ export function PasswordInput(props) {
       />
     );
   }
-   
+
+
+
 
 /*
  * Estos componentes están bastante buenos, pero estamos repitiendo mucho código,
@@ -89,4 +92,24 @@ export function PasswordInput(props) {
  * Si quieren, pueden agregar una prop extra "isPassword". Si es true el input deberá tener type="password".
  */
 
-export function ValidationInput(props) {}
+
+export function ValidationInput(props) {
+
+  const [input, setInput] = React.useState(false);
+    return (
+      <input
+        onChange={e => {
+
+          const isValid = props.validation(e.target.value)
+          console.log(isValid)
+
+            isValid
+              ? setInput(false)
+              : setInput(true);
+        }}
+        type={props.isPassword ? 'password' : 'text'} 
+        className={input ? 'input-match' : 'input'}
+      />
+    );
+  
+}

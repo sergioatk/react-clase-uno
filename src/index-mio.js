@@ -2,13 +2,22 @@ import { Welcome } from './components/Welcome.js';
 
 import { Tarjeta, BlogPost, autor, textoEnParrafos } from './tarea/Tarea1.js'
 
-import { MatchNombre, PasswordInput } from './tarea/Tarea2.js'
+import { MatchNombre, PasswordInput, ValidationInput } from './tarea/Tarea2.js'
 
 // Tarea2.js , clase 1
 
-ReactDOM.render(<PasswordInput
-    minLength='8'
+ReactDOM.render(<ValidationInput
+    validation={(value) => value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)}
+    isPassword={false}
 />, document.getElementById('react-app'));
+
+<React.Fragment>
+    
+</React.Fragment>
+
+// ReactDOM.render(<PasswordInput
+//     minLength='8'
+// />, document.getElementById('react-app'));
 
 // ReactDOM.render(<MatchNombre
 //     nombre="Sergio"
