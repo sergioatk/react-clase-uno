@@ -4,16 +4,46 @@ import { Tarjeta, BlogPost, autor, textoEnParrafos } from './tarea/Tarea1.js'
 
 import { MatchNombre, PasswordInput, ValidationInput } from './tarea/Tarea2.js'
 
+import { UncontrolledCheckbox, CheckboxList } from './tarea/Tarea3.js'
+
+import{ ControlledCheckbox, CheckboxListWithState } from './tarea/Tarea4.js'
+
 // Tarea2.js , clase 1
 
-ReactDOM.render(<ValidationInput
-    validation={(value) => value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)}
-    isPassword={false}
-/>, document.getElementById('react-app'));
+ReactDOM.render(<CheckboxListWithState items={
+    {
+       uno: false,
+       dos: true,
+       tres: false,
+     }
+    } />, document.getElementById('react-app'));
 
-<React.Fragment>
+// ReactDOM.render(<ControlledCheckbox
+//     name='Pepito'
+//     initialValue={true}
+//     onChange={() => alert(`Hiciste click en el checkbox!`)}
+// />, document.getElementById('react-app'));
+
+// ReactDOM.render(<CheckboxList
+//     items={{
+//         uno: false,
+//         dos: true,
+//         tres: false
+//     }}
     
-</React.Fragment>
+// />, document.getElementById('react-app'));
+
+// ReactDOM.render(<UncontrolledCheckbox
+//     name='Detonar Dinamita'
+//     initialValue=''
+// />, document.getElementById('react-app'));
+
+
+// ReactDOM.render(<ValidationInput
+//     validation={(value) => value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)}
+//     isPassword={false}
+// />, document.getElementById('react-app'));
+
 
 // ReactDOM.render(<PasswordInput
 //     minLength='8'
