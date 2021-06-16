@@ -10,13 +10,13 @@ import{ ControlledCheckbox, CheckboxListWithState } from './tarea/Tarea4.js'
 
 // Tarea2.js , clase 1
 
-ReactDOM.render(<CheckboxListWithState items={
-    {
-       uno: false,
-       dos: true,
-       tres: false,
-     }
-    } />, document.getElementById('react-app'));
+// ReactDOM.render(<CheckboxListWithState items={
+//     {
+//        uno: false,
+//        dos: true,
+//        tres: false,
+//      }
+//     } />, document.getElementById('react-app'));
 
 // ReactDOM.render(<ControlledCheckbox
 //     name='Pepito'
@@ -49,9 +49,9 @@ ReactDOM.render(<CheckboxListWithState items={
 //     minLength='8'
 // />, document.getElementById('react-app'));
 
-// ReactDOM.render(<MatchNombre
-//     nombre="Sergio"
-// />, document.getElementById('react-app'));
+ReactDOM.render(<MatchNombre
+    validName="sergio"
+/>, document.getElementById('react-app'));
 
 
 
