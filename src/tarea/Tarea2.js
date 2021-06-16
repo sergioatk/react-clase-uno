@@ -14,16 +14,15 @@
 
 
 export function MatchNombre(props) {
-    const [nombreValido, setNombreValido] = React.useState(false);
+    const [name, setName] = React.useState('');
 
-    
     return (
         <input 
             onChange={(e) => {
-              const nombre = e.target.value === 'sergio' ? setNombreValido(true) : setNombreValido(false)
+              setName(e.target.value);
             } 
             }
-            className={nombreValido ? 'input-match' : 'input'}
+            className={name === props.validName ? 'input-match' : 'input'}
         />
     )
 }
@@ -48,17 +47,15 @@ export function MatchNombre(props) {
  */
 
 export function PasswordInput(props) {
-    const [password, setPassword] = React.useState(false);
+    const [passwordLength, setPasswordLength] = React.useState('');
   
     return (
       <input
         onChange={e => {
-            e.target.value.length >= props.minLength
-              ? setPassword(true)
-              : setPassword(false);
+          setPasswordLength(e.target.value.length);
         }}
         type="password"
-        className={password ? 'input-match' : 'input'}
+        className={passwordLength >= props.minLength ? 'input-match' : 'input'}
       />
     );
   }
@@ -95,20 +92,15 @@ export function PasswordInput(props) {
 
 export function ValidationInput(props) {
 
-  const [input, setInput] = React.useState(false);
+  const [input, setInput] = React.useState('');
+
     return (
       <input
         onChange={e => {
-
-          const isValid = props.validation(e.target.value)
-          console.log(isValid)
-
-            isValid
-              ? setInput(false)
-              : setInput(true);
+          setInput(e.target.value)
         }}
         type={props.isPassword ? 'password' : 'text'} 
-        className={input ? 'input-match' : 'input'}
+        className={props.validation(input) ? 'input-match' : 'input'}
       />
     );
   

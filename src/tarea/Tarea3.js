@@ -12,14 +12,22 @@
 //import React from "react";
 
 export function UncontrolledCheckbox(props) {
-    const [checked, setChecked] = React.useState(false)
+    const [checked, setChecked] = React.useState(props.initialValue)
+
     return (
         <React.Fragment>
-            <input type='checkbox' defaultChecked={props.initialValue} id='dinamita' onChange={ () => {
+            <input 
+                type='checkbox' 
+                checked={checked} 
+                id={props.name} 
+                onChange={ () => {
                 setChecked(!checked);
-            }
-            }></input>
-            <label htmlFor='dinamita'>{props.name}</label>
+            }}>
+            </input>
+            <label 
+                htmlFor={props.name}>
+                    {props.name}
+            </label>
         </React.Fragment> 
     )
 }
@@ -41,10 +49,12 @@ export function CheckboxList(props) {
     return (
         <div>
             {
-            Object.entries(props.items).map(checkbox => {
-                return <UncontrolledCheckbox key={checkbox[0]} name={checkbox[0]} initialValue={checkbox[1]}/>
+            Object.entries(props.items).map(([inputName, initialValue]) => {
+                return <UncontrolledCheckbox 
+                    key={inputName} 
+                    name={inputName} 
+                    initialValue={initialValue}/>
             })
-        
             }
         </div>
        

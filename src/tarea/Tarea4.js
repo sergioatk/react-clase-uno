@@ -8,12 +8,16 @@
 
 export function ControlledCheckbox(props) {
 
+
     return (
         <React.Fragment>
-            <input type='checkbox' 
-                defaultChecked={props.initialValue} 
+            <input 
+                type='checkbox' 
+                checked={props.value} 
                 onChange={props.onChange}></input>
-            <label>{props.name}</label>
+            <label
+                htmlFor={props.name}
+            >{props.name}</label>
         </React.Fragment>
     )
 }
@@ -47,7 +51,7 @@ export function CheckboxListWithState(props) {
                 return <ControlledCheckbox  
                     key={name} 
                     name={name} 
-                    initialValue={value} 
+                    value={value} 
                     onChange={() => {
                    const nuevaLista = {...lista, [name]: !value }
                    setLista(nuevaLista)
