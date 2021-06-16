@@ -10,17 +10,17 @@ import{ ControlledCheckbox, CheckboxListWithState } from './tarea/Tarea4.js'
 
 // Tarea2.js , clase 1
 
-// ReactDOM.render(<CheckboxListWithState items={
-//     {
-//        uno: false,
-//        dos: true,
-//        tres: false,
-//      }
-//     } />, document.getElementById('react-app'));
+ReactDOM.render(<CheckboxListWithState items={
+    {
+       uno: false,
+       dos: true,
+       tres: false,
+     }
+    } />, document.getElementById('react-app'));
 
 // ReactDOM.render(<ControlledCheckbox
 //     name='Pepito'
-//     initialValue={true}
+//     value={true}
 //     onChange={() => alert(`Hiciste click en el checkbox!`)}
 // />, document.getElementById('react-app'));
 
@@ -35,7 +35,7 @@ import{ ControlledCheckbox, CheckboxListWithState } from './tarea/Tarea4.js'
 
 // ReactDOM.render(<UncontrolledCheckbox
 //     name='Detonar Dinamita'
-//     initialValue=''
+//     initialValue={true}
 // />, document.getElementById('react-app'));
 
 
@@ -46,12 +46,12 @@ import{ ControlledCheckbox, CheckboxListWithState } from './tarea/Tarea4.js'
 
 
 // ReactDOM.render(<PasswordInput
-//     minLength='8'
+//     minLength={8}
 // />, document.getElementById('react-app'));
 
-ReactDOM.render(<MatchNombre
-    validName="sergio"
-/>, document.getElementById('react-app'));
+// ReactDOM.render(<MatchNombre
+//     validName="sergio"
+// />, document.getElementById('react-app'));
 
 
 
